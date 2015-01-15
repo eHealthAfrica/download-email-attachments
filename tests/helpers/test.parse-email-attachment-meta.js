@@ -17,7 +17,8 @@ describe('parseEmailAttachmentMeta(attachment, mail)', function() {
       },
       from: [
         { address: 'sender@example.com' }
-      ]
+      ],
+      parentNode: null
     };
     this.meta = parseEmailAttachmentMeta(attachment, mail);
   });
