@@ -35,6 +35,7 @@ downloadEmailAttachments({
   timeout: 3000,
   since: '2015-01-12'
 })
+```
 
 ## Options
 
