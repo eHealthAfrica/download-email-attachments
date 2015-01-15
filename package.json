@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Download email attachments via IMAP",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
+  "bin": {
+    "download-email-attachments": "./bin/download-email-attachments"
   },
   "scripts": {
     "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
