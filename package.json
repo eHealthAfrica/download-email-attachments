@@ -4,7 +4,7 @@
   "description": "Download email attachments via IMAP",
   "main": "index.js",
   "bin": {
-    "download-email-attachments": "./bin/download-email-attachments"
+    "download-email-attachments": "./bin/download-email-attachments.js"
   },
   "scripts": {
     "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
