@@ -1,0 +1,46 @@
+{
+  "name": "download-email-attachments",
+  "version": "1.0.0",
+  "description": "Download email attachments via IMAP",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
+    "test": "npm run jshint && npm run test-node",
+    "test-node": "mocha tests/**/test.*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gr2m/download-email-attachments"
+  },
+  "keywords": [
+    "email",
+    "attachment",
+    "imap",
+    "cli"
+  ],
+  "author": "Gregor Martynus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gr2m/download-email-attachments/issues"
+  },
+  "homepage": "http://gr2m.github.com/download-email-attachments",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "debounce": "^1.0.0",
+    "mail-listener2": "git://github.com/gr2m/mail-listener2.git",
+    "minimist": "^1.1.0",
+    "mkdirp": "^0.5.0",
+    "moment": "^2.9.0",
+    "once": "^1.3.1",
+    "string-template": "^0.2.0",
+    "verbalize": "^0.1.2"
+  }
+}
