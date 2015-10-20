@@ -21,7 +21,9 @@
     "imap",
     "cli"
   ],
-  "author": "Gregor Martynus",
+  "author": {
+    "name": "Gregor Martynus"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gr2m/download-email-attachments/issues"
@@ -43,5 +45,27 @@
     "once": "^1.3.1",
     "string-template": "^0.2.0",
     "verbalize": "^0.1.2"
-  }
+  },
+  "gitHead": "d1c63c4dbcb561da5d60cebd89d3cb969f5867de",
+  "_id": "download-email-attachments@1.0.2",
+  "_shasum": "a6dec77137dd966203fb51f2c7f803e01125d8b2",
+  "_from": "download-email-attachments@*",
+  "_npmVersion": "2.1.11",
+  "_nodeVersion": "0.10.32",
+  "_npmUser": {
+    "name": "gr2m",
+    "email": "gregor@martynus.net"
+  },
+  "maintainers": [
+    {
+      "name": "gr2m",
+      "email": "gregor@martynus.net"
+    }
+  ],
+  "dist": {
+    "shasum": "a6dec77137dd966203fb51f2c7f803e01125d8b2",
+    "tarball": "http://registry.npmjs.org/download-email-attachments/-/download-email-attachments-1.0.2.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/download-email-attachments/-/download-email-attachments-1.0.2.tgz"
 }
