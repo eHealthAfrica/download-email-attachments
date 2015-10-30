@@ -38,7 +38,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "debounce": "^1.0.0",
-    "mail-listener2": "git://github.com/gr2m/mail-listener2.git",
+    "underscore": "*",
     "minimist": "^1.1.0",
     "mkdirp": "^0.5.0",
     "moment": "^2.9.0",
