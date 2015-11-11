@@ -14,12 +14,7 @@ var findEmails = require('./lib/find-emails')
 module.exports = function (config, callback) {
   var account = (typeof config.account === 'string') ? parseImapAccountString(config.account) : config.account
   var today = moment().toDate()
-  var since = config.since || today
   var directory = config.directory ? normalizeDirectoryPath(config.directory) : DEFAULT_TARGET
-  var filenameTemplate = config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE
-  var filenameFilter = config.filenameFilter
-  var keepalive = config.keepalive
-  var timeout = config.timeout || DEFAULT_TIMEOUT
 
   var args = {
     username: account.username,
@@ -28,11 +23,11 @@ module.exports = function (config, callback) {
     host: account.host,
     port: account.port || DEFAULT_PORT,
     directory: directory,
-    filenameTemplate: filenameTemplate,
-    filenameFilter: filenameFilter,
-    since: since,
-    keepalive: keepalive,
-    timeout: timeout,
+    filenameTemplate: config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE,
+    filenameFilter: config.filenameFilter,
+    since: config.since || today,
+    keepalive: config.keepalive,
+    timeout: config.timeout || DEFAULT_TIMEOUT,
     log: log
   }
 

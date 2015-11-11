@@ -2,10 +2,10 @@
 
 > Download email attachments via IMAP
 
-[![Build Status](https://travis-ci.org/gr2m/download-email-attachments.png?branch=master)](https://travis-ci.org/gr2m/download-email-attachments/)
+[![Build Status](https://travis-ci.org/eHealthAfrica/download-email-attachments.png?branch=master)](https://travis-ci.org/eHealthAfrica/download-email-attachments/)
 
 `download-email-attachments` downloads all attachements of an email account
-to a directory. It can either be required as module or used as
+to a directory and optionally do some postprocessing. It can either be required as module or used as
 a command line tool.
 
 ## Command Line Interface
@@ -26,15 +26,27 @@ download-email-attachments "joe@example.com":secret@imap-server.com:123 \
 ## Using as module
 
 ```js
+var onEnd = function (error) {
+  if (error) {
+    console.log(error)
+    return
+  }
+  console.log("done")
+}
+
 var downloadEmailAttachments = require('download-email-attachments');
 downloadEmailAttachments({
-  account: '"joe@example.com":secret@imap-server.com:123',
+  account: '"joe@example.com":secret@imap-server.com:123', // all options and params besides account are optional
   directory: './files',
   filenameTemplate: '{day}-{filename}',
   filenameFilter: /.xlsx?$/,
   timeout: 3000,
-  since: '2015-01-12'
-})
+  since: '2015-01-12',
+  attachmentHandler: function (attachmentData, callback) {
+    console.log(attachmentData)
+    callback()
+  }
+}, onEnd)
 ```
 
 ## Options
