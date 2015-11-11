@@ -7,9 +7,9 @@
     "download-email-attachments": "./bin/download-email-attachments.js"
   },
   "scripts": {
-    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
-    "test": "npm run jshint && npm run test-node",
-    "test-node": "mocha tests/**/test.*.js"
+    "test": "standard && npm run test-node",
+    "test-node": "mocha tests/**/test.*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -31,9 +31,9 @@
   "homepage": "http://gr2m.github.com/download-email-attachments",
   "devDependencies": {
     "chai": "^1.10.0",
-    "jshint": "^2.5.11",
     "mocha": "^2.1.0",
-    "sinon": "^1.12.2"
+    "sinon": "^1.12.2",
+    "semantic-release": "^4.3.5"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -50,5 +50,9 @@
       "name": "gr2m",
       "email": "gregor@martynus.net"
     }
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://npme.eocng.org/",
+    "tag": "next"
+  }
 }
