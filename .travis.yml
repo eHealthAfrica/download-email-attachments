@@ -9,11 +9,9 @@ node_js:
   - 4
 before_install:
   - echo "//npme.eocng.org/:_authToken=$NPM_TOKEN" >> .npmrc
-  - npm install -g npm@^2.0.0
-  - npm install -g bower standard grunt-cli
+  - npm install -g npm@^3.0.0
 install:
   - npm install
-  - bower install
 before_script:
   - npm prune
 after_success:
