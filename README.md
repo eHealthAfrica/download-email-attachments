@@ -41,6 +41,7 @@ downloadEmailAttachments({
   filenameTemplate: '{day}-{filename}',
   filenameFilter: /.xlsx?$/,
   timeout: 3000,
+  log: console.log,
   since: '2015-01-12',
   attachmentHandler: function (attachmentData, callback) {
     console.log(attachmentData)

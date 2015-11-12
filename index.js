@@ -3,7 +3,6 @@ var DEFAULT_TARGET = './'
 var DEFAULT_FILENAME_TEMPLATE = '{filename}'
 var DEFAULT_TIMEOUT = 10000
 
-var log = require('verbalize')
 var moment = require('moment')
 
 var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path')
@@ -28,16 +27,10 @@ module.exports = function (config, callback) {
     since: config.since || today,
     keepalive: config.keepalive,
     timeout: config.timeout || DEFAULT_TIMEOUT,
-    log: log
+    log: config.log || console.log
   }
 
-  log.runner = 'download-email-attachments'
-
-  log.info(
-    'Downloading attachments for %s since %s to %s ...',
-    args.username,
-    args.since,
-    args.directory)
+  args.log.info('Downloading attachments for ' + args.username + ' since ' + args.since + ' to ' + args.directory + '...')
 
   findEmails(args, callback)
 }
