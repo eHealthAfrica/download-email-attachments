@@ -52,9 +52,5 @@
       "name": "gr2m",
       "email": "gregor@martynus.net"
     }
-  ],
-  "publishConfig": {
-    "registry": "https://npme.eocng.org/",
-    "tag": "next"
-  }
+  ]
 }
