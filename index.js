@@ -1,45 +1,36 @@
-var DEFAULT_PORT = 993;
-var DEFAULT_TARGET = './';
-var DEFAULT_FILENAME_TEMPLATE = '{filename}';
-var DEFAULT_TIMEOUT = 10000;
+var DEFAULT_PORT = 993
+var DEFAULT_TARGET = './'
+var DEFAULT_FILENAME_TEMPLATE = '{filename}'
+var DEFAULT_TIMEOUT = 10000
 
-var log = require('verbalize');
-var moment = require('moment');
-var async = require('async');
+var moment = require('moment')
 
-var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path');
-var parseImapAccountString = require('./lib/helpers/parse-imap-account-string');
+var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path')
+var parseImapAccountString = require('./lib/helpers/parse-imap-account-string')
 
-var findEmails = require('./lib/find-emails');
+var findEmails = require('./lib/find-emails')
 
-module.exports = function(config, callback) {
-  var account = (typeof config.account === 'string') ? parseImapAccountString(config.account) : config.account;
-  var today = moment().format('YYYY-MM-DD');
-  var since = config.since || today;
-  var directory = config.directory ? normalizeDirectoryPath(config.directory) : DEFAULT_TARGET;
-  var filenameTemplate = config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE;
-  var filenameFilter = config.filenameFilter;
-  var timeout = config.timeout || DEFAULT_TIMEOUT;
+module.exports = function (config, callback) {
+  var account = (typeof config.account === 'string') ? parseImapAccountString(config.account) : config.account
+  var today = moment().toDate()
+  var directory = config.directory ? normalizeDirectoryPath(config.directory) : DEFAULT_TARGET
+
   var args = {
     username: account.username,
     password: account.password,
+    attachmentHandler: config.attachmentHandler,
     host: account.host,
     port: account.port || DEFAULT_PORT,
     directory: directory,
-    filenameTemplate: filenameTemplate,
-    filenameFilter: filenameFilter,
-    since: since,
-    timeout: timeout,
-    log: log
-  };
+    filenameTemplate: config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE,
+    filenameFilter: config.filenameFilter,
+    since: config.since || today,
+    keepalive: config.keepalive,
+    timeout: config.timeout || DEFAULT_TIMEOUT,
+    log: config.log || console.log
+  }
 
-  log.runner = 'download-email-attachments';
-  log.info('Downloading attachments for %s since %s to %s ...', args.username, args.since, args.directory);
+  args.log.info('Downloading attachments for ' + args.username + ' since ' + args.since + ' to ' + args.directory + '...')
 
-  async.waterfall([
-    function (callback) {
-      callback(null);
-    },
-    findEmails.bind(null, args),
-  ], callback);
-};
+  findEmails(args, callback)
+}
