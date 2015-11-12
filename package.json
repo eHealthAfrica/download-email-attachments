@@ -7,13 +7,13 @@
     "download-email-attachments": "./bin/download-email-attachments.js"
   },
   "scripts": {
-    "jshint": "jshint -c .jshintrc lib/ bin/ tests/",
-    "test": "npm run jshint && npm run test-node",
-    "test-node": "mocha tests/**/test.*.js"
+    "test": "standard && npm run test-node",
+    "test-node": "mocha tests/**/test.*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/gr2m/download-email-attachments"
+    "url": "git://github.com/eHealthAfrica/download-email-attachments"
   },
   "keywords": [
     "email",
@@ -21,7 +21,9 @@
     "imap",
     "cli"
   ],
-  "author": "Gregor Martynus",
+  "author": {
+    "name": "Gregor Martynus"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gr2m/download-email-attachments/issues"
@@ -29,19 +31,26 @@
   "homepage": "http://gr2m.github.com/download-email-attachments",
   "devDependencies": {
     "chai": "^1.10.0",
-    "jshint": "^2.5.11",
     "mocha": "^2.1.0",
-    "sinon": "^1.12.2"
+    "sinon": "^1.12.2",
+    "semantic-release": "^4.3.5",
+    "standard": "^5.3.1"
   },
   "dependencies": {
     "async": "^0.9.0",
-    "debounce": "^1.0.0",
-    "mail-listener2": "git://github.com/gr2m/mail-listener2.git",
+    "imap": "^0.8.15",
+    "lodash.after": "^3.0.1",
+    "mailparser": "^0.4.9 ",
     "minimist": "^1.1.0",
     "mkdirp": "^0.5.0",
     "moment": "^2.9.0",
-    "once": "^1.3.1",
     "string-template": "^0.2.0",
     "verbalize": "^0.1.2"
-  }
+  },
+  "maintainers": [
+    {
+      "name": "gr2m",
+      "email": "gregor@martynus.net"
+    }
+  ]
 }
