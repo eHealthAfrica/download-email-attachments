@@ -6,16 +6,13 @@ cache:
 notifications:
   email: false
 node_js:
-  - 4
+  - '4' - stable
 before_install:
-  - npm install -g npm@^3.0.0
-install:
-  - npm install
+  - npm i -g npm@3
 before_script:
   - npm prune
 after_success:
   - npm run semantic-release
 branches:
   except:
-    # ignore git tags created by semantic-release, like "v1.2.3"
-    - /^v\d+\.\d+\.\d+$/
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
