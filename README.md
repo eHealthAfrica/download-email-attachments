@@ -36,6 +36,7 @@ var onEnd = function (error) {
 
 var downloadEmailAttachments = require('download-email-attachments');
 downloadEmailAttachments({
+  invalidChars: /[^A-Z]/g, //Regex of Characters that are invalid and will be replaced by X
   account: '"joe@example.com":secret@imap-server.com:123', // all options and params besides account are optional
   directory: './files',
   filenameTemplate: '{day}-{filename}',
