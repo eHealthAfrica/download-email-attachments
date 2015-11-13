@@ -26,9 +26,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gr2m/download-email-attachments/issues"
+    "url": "https://github.com/eHealthAfrica/download-email-attachments/issues"
   },
-  "homepage": "http://gr2m.github.com/download-email-attachments",
+  "homepage": "https://github.com/eHealthAfrica/download-email-attachments",
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0",
