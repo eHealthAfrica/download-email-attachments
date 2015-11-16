@@ -26,12 +26,13 @@ download-email-attachments "joe@example.com":secret@imap-server.com:123 \
 ## Using as module
 
 ```js
-var onEnd = function (error) {
-  if (error) {
-    console.log(error)
+var onEnd = function (result) {
+  if (result.error) {
+    console.log(result.error)
     return
   }
   console.log("done")
+  console.log(result.latestTime)
 }
 
 var downloadEmailAttachments = require('download-email-attachments');
