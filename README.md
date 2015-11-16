@@ -131,7 +131,7 @@ npm test
 
 **Note**: There is no full stack test yet, because of the complexity
 of stubbing an imap server. If someone could help here, that'd be
-much appreciated. [Ping me](https://twitter.com/gr2m)
+much appreciated! [Ping me](https://twitter.com/gr2m)
 
 ## License
 
