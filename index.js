@@ -3,8 +3,6 @@ var DEFAULT_TARGET = './'
 var DEFAULT_FILENAME_TEMPLATE = '{filename}'
 var DEFAULT_TIMEOUT = 10000
 
-var moment = require('moment')
-
 var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path')
 var parseImapAccountString = require('./lib/helpers/parse-imap-account-string')
 
@@ -12,7 +10,6 @@ var findEmails = require('./lib/find-emails')
 
 module.exports = function (config, callback) {
   var account = (typeof config.account === 'string') ? parseImapAccountString(config.account) : config.account
-  var today = moment().toDate()
   var directory = config.directory ? normalizeDirectoryPath(config.directory) : DEFAULT_TARGET
 
   var args = {
@@ -25,7 +22,7 @@ module.exports = function (config, callback) {
     directory: directory,
     filenameTemplate: config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE,
     filenameFilter: config.filenameFilter,
-    since: config.since || today,
+    since: config.since,
     keepalive: config.keepalive,
     lastSyncIds: config.lastSyncIds || [],
     timeout: config.timeout || DEFAULT_TIMEOUT,
