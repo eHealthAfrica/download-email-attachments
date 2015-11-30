@@ -9,7 +9,12 @@ var config = {
   filenameTemplate: argv['filename-template'],
   filenameFilter: filenameFilter,
   since: argv.since,
-  timeout: timeout
+  timeout: timeout,
+  log: {
+    info: console.info,
+    warn: console.warn,
+    error: console.error
+  }
 }
 
 var downloadEmailAttachments = require('../index.js')
