@@ -24,7 +24,8 @@ module.exports = function (config, callback) {
     filenameFilter: config.filenameFilter,
     since: config.since,
     keepalive: config.keepalive,
-    lastSyncIds: config.lastSyncIds || [],
+    lastSyncId: config.lastSyncId || 0,
+    uidvalidity: config.uidvalidity,
     timeout: config.timeout || DEFAULT_TIMEOUT,
     log: config.log || console.log
   }
