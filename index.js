@@ -13,7 +13,7 @@ module.exports = function (config, callback) {
   var directory = config.directory ? normalizeDirectoryPath(config.directory) : DEFAULT_TARGET
 
   var args = {
-    invalidChars: config.invalidChars || /[^A-Za-z\d-_\.]/g,
+    invalidChars: config.invalidChars || /[^A-Za-z\d-_\.]/g, // /a^/g for everything
     username: account.username,
     password: account.password,
     attachmentHandler: config.attachmentHandler,
