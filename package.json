@@ -36,13 +36,12 @@
     "standard": "^5.3.1"
   },
   "dependencies": {
-    "async": "1.4.0",
+    "async": "1.5.0",
     "imap": "0.8.16",
-    "lodash.after": "3.0.1",
     "lodash.filter": "3.1.1",
-    "mailparser": "^0.4.9 ",
+    "mailparser": "0.5.3 ",
     "minimist": "^1.1.0",
-    "mkdirp": "^0.5.0",
+    "mkdirp": "0.5.1",
     "moment": "^2.10.6",
     "string-template": "^0.2.0",
     "verbalize": "^0.1.2"
