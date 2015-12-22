@@ -27,7 +27,8 @@ module.exports = function (config, callback) {
     lastSyncId: config.lastSyncId || 0,
     uidvalidity: config.uidvalidity,
     timeout: config.timeout || DEFAULT_TIMEOUT,
-    log: config.log || console.log
+    log: config.log || console.log,
+    debug: config.debug
   }
 
   args.log.info('Downloading attachments for ' + args.username + ' since ' + args.since + ' to ' + args.directory + '...')
