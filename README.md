@@ -43,7 +43,7 @@ downloadEmailAttachments({
   filenameTemplate: '{day}-{filename}',
   filenameFilter: /.xlsx?$/,
   timeout: 3000,
-  log: console.log,
+  log: {warn: console.warn, debug: console.info, error, console.error, info: console.info },
   since: '2015-01-12',
   lastSyncIds: ['234', '234', '5345'] // ids already dowloaded and ignored, helpful because since is only supporting dates without time
   attachmentHandler: function (attachmentData, callback, errorCB) {
