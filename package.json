@@ -39,6 +39,7 @@
     "async": "1.5.0",
     "imap": "0.8.16",
     "lodash.filter": "3.1.1",
+    "lodash.once": "3.0.3",
     "mailparser": "0.5.3 ",
     "minimist": "^1.1.0",
     "mkdirp": "0.5.1",

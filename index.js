@@ -1,7 +1,7 @@
 var DEFAULT_PORT = 993
 var DEFAULT_TARGET = './'
 var DEFAULT_FILENAME_TEMPLATE = '{filename}'
-var DEFAULT_TIMEOUT = 10000
+var DEFAULT_TIMEOUT = 1000
 
 var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path')
 var parseImapAccountString = require('./lib/helpers/parse-imap-account-string')
