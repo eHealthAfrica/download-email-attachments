@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eHealthAfrica/download-email-attachments"
+    "url": "git+https://github.com/eHealthAfrica/download-email-attachments.git"
   },
   "keywords": [
     "email",
@@ -48,6 +48,10 @@
     "verbalize": "^0.1.2"
   },
   "maintainers": [
+    {
+      "name": "ehealthafrica",
+      "email": "oss@ehealthafrica.org"
+    },
     {
       "name": "gr2m",
       "email": "gregor@martynus.net"

@@ -31,6 +31,12 @@ module.exports = function (config, callback) {
     debug: config.debug
   }
 
+  if (config.ssl === false) {
+    args.ssl = false
+  } else {
+    args.ssl = true
+  }
+
   args.log.info('Downloading attachments for ' + args.username + ' since ' + args.since + ' to ' + args.directory + '...')
 
   findEmails(args, callback)
