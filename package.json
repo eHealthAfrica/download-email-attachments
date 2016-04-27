@@ -29,23 +29,23 @@
   },
   "homepage": "https://github.com/eHealthAfrica/download-email-attachments",
   "devDependencies": {
-    "chai": "^1.10.0",
-    "mocha": "^2.1.0",
-    "semantic-release": "^6.0.3",
-    "sinon": "^1.12.2",
-    "standard": "^5.3.1"
+    "chai": "1.10.0",
+    "mocha": "2.1.0",
+    "semantic-release": "6.0.3",
+    "sinon": "1.12.2",
+    "standard": "5.3.1"
   },
   "dependencies": {
     "async": "1.5.0",
-    "imap": "0.8.16",
+    "imap": "0.8.17",
     "lodash.filter": "3.1.1",
     "lodash.once": "3.0.1",
-    "mailparser": "0.5.3 ",
-    "minimist": "^1.1.0",
+    "mailparser": "0.5.3",
+    "minimist": "1.1.0",
     "mkdirp": "0.5.1",
-    "moment": "^2.10.6",
-    "string-template": "^0.2.0",
-    "verbalize": "^0.1.2"
+    "moment": "2.10.6",
+    "string-template": "0.2.0",
+    "verbalize": "0.1.2"
   },
   "maintainers": [
     {
