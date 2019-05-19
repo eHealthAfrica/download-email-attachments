@@ -2,6 +2,7 @@ var DEFAULT_PORT = 993
 var DEFAULT_TARGET = './'
 var DEFAULT_FILENAME_TEMPLATE = '{filename}'
 var DEFAULT_TIMEOUT = 1000
+var DEFAULT_MAX_CALL = 5
 
 var normalizeDirectoryPath = require('./lib/helpers/normalize-directory-path')
 var parseImapAccountString = require('./lib/helpers/parse-imap-account-string')
@@ -23,6 +24,7 @@ module.exports = function (config, callback) {
     filenameTemplate: config.filenameTemplate || DEFAULT_FILENAME_TEMPLATE,
     filenameFilter: config.filenameFilter,
     since: config.since,
+    maxCall: config.maxCall || DEFAULT_MAX_CALL,
     keepalive: config.keepalive,
     lastSyncId: config.lastSyncId || 0,
     uidvalidity: config.uidvalidity,
