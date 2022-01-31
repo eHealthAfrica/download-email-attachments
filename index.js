@@ -28,7 +28,8 @@ module.exports = function (config, callback) {
     uidvalidity: config.uidvalidity,
     timeout: config.timeout || DEFAULT_TIMEOUT,
     log: config.log || console.log,
-    debug: config.debug
+    debug: config.debug,
+    sender: config.sender
   }
 
   if (config.ssl === false) {
